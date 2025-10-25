@@ -418,10 +418,10 @@ export default function Home() {
               </span>
             
       </div>
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
         Build Your Portfolio in 3 Easy Steps
       </h2>
-      <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+      <p className="text-sm sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
         From claiming your domain to showcasing your work, we've made the process incredibly simple and fast.
       </p>
     </div>
@@ -437,12 +437,12 @@ export default function Home() {
           {/* Step Number */}
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center">
-              <div className="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
+              <div className="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-white font-bold text-sm sm:text-lg shadow-lg">
                 1
               </div>
               <div className="ml-4">
                 <span className="text-xs font-semibold text-black uppercase tracking-wider">Step One</span>
-                <h3 className="text-xl font-bold text-gray-900">Claim Your Domain</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900">Claim Your Domain</h3>
               </div>
             </div>
             <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -463,11 +463,11 @@ export default function Home() {
 
           {/* Content */}
           <div className="space-y-4">
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-xl">
               Secure your unique username and get your personalized portfolio domain instantly. 
               No technical skills required.
             </p>
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-sm sm:text-xl">
               {[
                 "Choose your perfect username",
                 "Check instant availability",
@@ -504,7 +504,7 @@ export default function Home() {
               </div>
               <div className="ml-4">
                 <span className="text-xs font-semibold text-black uppercase tracking-wider">Step Two</span>
-                <h3 className="text-xl font-bold text-gray-900">Customize & Build</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900">Customize & Build</h3>
               </div>
             </div>
             <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -525,11 +525,11 @@ export default function Home() {
 
           {/* Content */}
           <div className="space-y-4">
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-xl">
               Choose from beautiful templates and customize your portfolio with our drag-and-drop builder. 
               Add your projects, skills, and achievements.
             </p>
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-sm sm:text-xl">
               {[
                 "Select from 50+ templates",
                 "Drag-and-drop customization",
@@ -547,7 +547,7 @@ export default function Home() {
 
           {/* Progress Indicator */}
           <div className="mt-6">
-            <div className="flex items-center justify-between text-sm text-gray-500 mb-2">
+            <div className="flex items-center justify-between text-xs sm:text-sm text-gray-500 mb-2">
               <span>Setup Progress</span>
               <span>50%</span>
             </div>
@@ -572,7 +572,7 @@ export default function Home() {
               </div>
               <div className="ml-4">
                 <span className="text-xs font-semibold text-black uppercase tracking-wider">Step Three</span>
-                <h3 className="text-xl font-bold text-gray-900">Go Live & Grow</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900">Go Live & Grow</h3>
               </div>
             </div>
             <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -593,11 +593,11 @@ export default function Home() {
 
           {/* Content */}
           <div className="space-y-4">
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-xl">
               Publish your portfolio instantly and start sharing it with the world. 
               Track your visitors and get discovered by opportunities.
             </p>
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-sm sm:text-xl">
               {[
                 "One-click publishing",
                 "Share on social media",
@@ -628,18 +628,18 @@ export default function Home() {
         <h3 className="text-2xl sm:text-3xl font-bold mb-4">
           Ready to Start Your Journey?
         </h3>
-        <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg">
+        <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-sm sm:text-lg">
           Join thousands of professionals who have built their dream portfolio with Expertisor.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+          <button className=" text-sm sm:text-xl px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
             Get Started Free
           </button>
-          <button className="px-8 py-4 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 transform hover:scale-105">
+          <button className=" text-sm sm:text-xl px-8 py-4 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 transform hover:scale-105">
             Watch Demo
           </button>
         </div>
-        <p className="text-gray-400 mt-6 text-sm">
+        <p className="text-gray-400 mt-6 text-xs sm:text-sm">
           No credit card required • Setup in under 5 minutes
         </p>
       </div>
@@ -884,7 +884,7 @@ export default function Home() {
       </section> */}
 
       {/* FAQ Section */}
-      <section id="faq" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="faq" className="py-8 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12">
             <div className="text-center lg:text-left">

@@ -237,8 +237,8 @@ export default function VerifyOtpClient({ username }: VerifyOtpProps) {
             {otpRequested && (
               <div className="space-y-6">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <Mail className="w-8 h-8 text-green-600" />
+                  <div className="w-16 h-16 bg-black rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Mail className="w-8 h-8 text-white" />
                   </div>
                   <p className="text-gray-600 mb-2">
                     We sent a code to <span className="font-semibold text-gray-900">{email}</span>
@@ -258,7 +258,7 @@ export default function VerifyOtpClient({ username }: VerifyOtpProps) {
                       }}
                       type="text"
                       maxLength={1}
-                      className="w-12 h-14 border-2 border-gray-200 bg-gray-50 rounded-xl text-center text-xl font-semibold focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300 hover:border-gray-300"
+                      className="w-12 h-14 border-2 border-gray-200 text-black bg-gray-50 rounded-xl text-center text-xl font-semibold focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-300 hover:border-gray-300"
                       value={digit}
                       onChange={(e) => handleOtpChange(e, idx)}
                       onKeyDown={(e) => handleOtpKeyDown(e, idx)}
@@ -350,18 +350,13 @@ export default function VerifyOtpClient({ username }: VerifyOtpProps) {
 
             {/* Action Buttons */}
             <div className="flex space-x-3">
-              <button
-                onClick={() => setShowModal(false)}
-                className="flex-1 px-4 py-3 border-2 border-gray-300 text-gray-700 rounded-xl hover:border-gray-400 hover:bg-gray-50 transition-all duration-300 font-medium"
-              >
-                Close
-              </button>
+              
               <button
                 onClick={() => {
                   setShowModal(false);
                   router.push("/");
                 }}
-                className="flex-1 px-4 py-3 bg-gradient-to-r from-black to-yellow-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 font-semibold shadow-lg"
+                className="flex-1 px-4 py-3 bg-black text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 font-semibold shadow-lg"
               >
                 Continue Building
               </button>
