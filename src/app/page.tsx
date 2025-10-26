@@ -50,9 +50,9 @@ import Link from "next/link";
 
 // Configure Montserrat font
 const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 export default function Home() {
@@ -63,7 +63,7 @@ export default function Home() {
   const [message, setMessage] = useState("");
   const [isChecking, setIsChecking] = useState(false);
   const router = useRouter();
-  
+
   useEffect(() => {
     if (!username.trim()) {
       setStatus("");
@@ -71,7 +71,7 @@ export default function Home() {
       return;
     }
 
-    if(username.length < 3){
+    if (username.length < 3) {
       setIsChecking(false);
       setStatus("invalid");
       setMessage(" Username must be at least 3 characters long.");
@@ -81,7 +81,7 @@ export default function Home() {
     const delayDebounce = setTimeout(() => {
       checkUsername(username);
     }, 500);
-    
+
     return () => clearTimeout(delayDebounce);
   }, [username]);
 
@@ -202,7 +202,9 @@ export default function Home() {
   ];
 
   return (
-    <div className={`min-h-screen bg-white overflow-x-hidden ${montserrat.className}`}>
+    <div
+      className={`min-h-screen bg-white overflow-x-hidden ${montserrat.className}`}
+    >
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -240,20 +242,20 @@ export default function Home() {
             </div>
 
             {/* Desktop Buttons */}
-              <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
-      <Link
-        href="/login"
-        className="px-3 py-2 text-sm lg:px-4 lg:py-2 lg:text-base border text-black border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
-      >
-        Log in
-      </Link>
-      <Link
-        href="/register"
-        className="px-3 py-2 text-sm lg:px-4 lg:py-2 lg:text-base bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
-      >
-        Register
-      </Link>
-    </div>
+            <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
+              <Link
+                href="/login"
+                className="px-3 py-2 text-sm lg:px-4 lg:py-2 lg:text-base border text-black border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+              >
+                Log in
+              </Link>
+              <Link
+                href="/register"
+                className="px-3 py-2 text-sm lg:px-4 lg:py-2 lg:text-base bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
+              >
+                Register
+              </Link>
+            </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -274,14 +276,14 @@ export default function Home() {
               <div className="flex flex-col space-y-4">
                 {[
                   { name: "Home", href: "#" },
-                { name: "Features", href: "#features" },
-                { name: "Why us?", href: "#whyus" },
-                // { name: "Testimonials", href: "#testimonials" },
-                { name: "FAQ", href: "#faq" },
+                  { name: "Features", href: "#features" },
+                  { name: "Why us?", href: "#whyus" },
+                  // { name: "Testimonials", href: "#testimonials" },
+                  { name: "FAQ", href: "#faq" },
                 ].map((item) => (
                   <a
                     key={item.name}
-                  href={item.href}
+                    href={item.href}
                     className="text-gray-700 hover:text-black font-medium py-2"
                     onClick={() => setMenuOpen(false)}
                   >
@@ -289,19 +291,19 @@ export default function Home() {
                   </a>
                 ))}
                 <div className="flex space-x-3 pt-4">
-      <Link
-        href="/login"
-        className="flex-1 px-4 py-2 border text-black border-gray-300 rounded-lg hover:bg-gray-50 text-sm font-medium text-center transition-colors"
-      >
-        Log in
-      </Link>
-      <Link
-        href="/register"
-        className="flex-1 px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 text-sm font-medium text-center transition-colors"
-      >
-        Register
-      </Link>
-    </div>
+                  <Link
+                    href="/login"
+                    className="flex-1 px-4 py-2 border text-black border-gray-300 rounded-lg hover:bg-gray-50 text-sm font-medium text-center transition-colors"
+                  >
+                    Log in
+                  </Link>
+                  <Link
+                    href="/register"
+                    className="flex-1 px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 text-sm font-medium text-center transition-colors"
+                  >
+                    Register
+                  </Link>
+                </div>
               </div>
             </div>
           )}
@@ -321,6 +323,10 @@ export default function Home() {
           backgroundSize: "cover",
         }}
       >
+{/* Decorative gradient balls */}
+<div className="hidden md:block absolute -left-20 top-1/3 w-72 h-72 bg-yellow-200 rounded-full blur-[120px] opacity-50 pointer-events-none" />
+<div className="hidden md:block absolute -right-20 bottom-1/3 w-72 h-72 bg-pink-200 rounded-full blur-[120px] opacity-50 pointer-events-none" />
+
         <div className="max-w-7xl mx-auto text-center">
           {/* Integration Badge */}
           <div className="inline-flex items-center bg-yellow-50 border border-yellow-200 rounded-full px-3 py-1 mb-6 sm:px-4 sm:py-2 sm:mb-8 max-w-xs sm:max-w-none mx-auto">
@@ -364,20 +370,23 @@ export default function Home() {
           </p>
 
           {/* Input Section */}
-          <div className="max-w-xl mx-auto flex flex-col gap-2 sm:gap-3 px-4">
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <div className="flex-1 flex items-center bg-gray-50 border border-gray-300 rounded-lg px-3 sm:px-4 py-2 sm:py-3">
+          <div className="w-full max-w-2xl mx-auto flex flex-col gap-3 sm:gap-4 px-4 sm:px-6">
+            <div className="flex flex-col sm:flex-row items-stretch gap-3 sm:gap-4">
+              {/* Username input with domain */}
+              <div className="flex-1 flex items-center bg-gray-50 border border-gray-300 rounded-xl px-3 sm:px-4 py-2 sm:py-3 shadow-sm focus-within:ring-2 focus-within:ring-black/10 transition">
                 <input
                   type="text"
-                  placeholder="Enter Username"
+                  placeholder="Enter username"
                   value={username}
                   onChange={(e) => setUsername(e.target.value.trim())}
-                  className="flex-1 bg-transparent outline-none text-gray-700 placeholder-gray-500 text-sm sm:text-base font-normal"
+                  className="flex-1 bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm sm:text-base font-normal"
                 />
-                <span className="text-gray-500 font-medium text-sm sm:text-base whitespace-nowrap">
+                <span className="text-gray-500 font-medium text-sm sm:text-base whitespace-nowrap ml-1 sm:ml-2">
                   .expertisor.com
                 </span>
               </div>
+
+              {/* Claim Now button */}
               <button
                 disabled={isButtonDisabled}
                 onClick={handleClaimNow}
@@ -385,15 +394,16 @@ export default function Home() {
                   isButtonDisabled
                     ? "bg-gray-400 cursor-not-allowed"
                     : "bg-black hover:bg-gray-800"
-                } text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold transition-colors shadow-lg text-sm sm:text-base whitespace-nowrap`}
+                } text-white px-5 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold transition-colors shadow-md text-sm sm:text-base whitespace-nowrap`}
               >
                 {isChecking ? "Checking..." : "Claim Now"}
               </button>
             </div>
 
+            {/* Status message */}
             {message && (
               <div
-                className={`flex items-center mt-2 p-2 rounded-lg text-sm sm:text-base ${
+                className={`flex items-center mt-2 p-2 sm:p-3 rounded-lg text-sm sm:text-base transition-colors ${
                   status === "available"
                     ? "bg-green-100 text-green-700"
                     : status === "taken"
@@ -413,229 +423,281 @@ export default function Home() {
             )}
           </div>
         </div>
-        <div className="mt-12 sm:mt-16">
+        <div className="">
           <PlatformVisualization />
         </div>
       </section>
 
       {/* Steps Section */}
       <section className="py-5 sm:py-5 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50/50 to-white">
-  <div className="max-w-7xl mx-auto">
-    {/* Section Header */}
-    <div className="text-center mb-16 sm:mb-20">
-     
-        <div className="inline-block bg-white border border-gray-300 rounded-full px-3 py-1 sm:px-4 sm:py-2 mb-3 sm:mb-4">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16 sm:mb-20">
+            <div className="inline-block bg-white border border-gray-300 rounded-full px-3 py-1 sm:px-4 sm:py-2 mb-3 sm:mb-4">
               <span className="text-xs sm:text-sm font-medium text-gray-700 uppercase tracking-wide">
-               Simple Process
+                Simple Process
               </span>
-            
-      </div>
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-        BUILD YOUR PORTFOLIO IN 3 EASY STEPS
-      </h2>
-      <p className="text-sm sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-        From claiming your domain to showcasing your work, we've made the process incredibly simple and fast.
-      </p>
-    </div>
-
-    {/* Steps Grid */}
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12">
-      {/* Step 1 */}
-      <div className="group relative">
-        {/* Background Effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-white rounded-3xl transform group-hover:scale-105 transition-all duration-500"></div>
-        
-        <div className="relative bg-white rounded-2xl border border-yellow-200 p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:border-yellow-200">
-          {/* Step Number */}
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-white font-bold text-sm sm:text-lg shadow-lg">
-                1
-              </div>
-              <div className="ml-4">
-                <span className="text-xs font-semibold text-black uppercase tracking-wider">Step One</span>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900">Claim Your Domain</h3>
-              </div>
             </div>
-            <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <svg className="w-5 h-5 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-          </div>
-
-          {/* Image */}
-          <div className="mb-6 rounded-xl overflow-hidden transform group-hover:scale-105 transition-transform duration-500">
-            <Image
-              src={S1}
-              alt="Claim your domain step"
-              className="w-full h-48 object-cover"
-            />
-          </div>
-
-          {/* Content */}
-          <div className="space-y-4">
-            <p className="text-gray-600 leading-relaxed text-sm sm:text-[16px]">
-              Secure your unique username and get your personalized portfolio domain instantly. 
-              No technical skills required.
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              BUILD YOUR PORTFOLIO IN 3 EASY STEPS
+            </h2>
+            <p className="text-sm sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              From claiming your domain to showcasing your work, we've made the
+              process incredibly simple and fast.
             </p>
-            <ul className="space-y-2 text-sm sm:text-xl">
-              {[
-                "Choose your perfect username",
-                "Check instant availability",
-                "Get your domain in seconds"
-              ].map((item, index) => (
-                <li key={index} className="flex items-center text-sm text-gray-600">
-                  <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center mr-3">
-                    <Check className="w-3 h-3 text-yellow-300" />
+          </div>
+
+          {/* Steps Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12">
+            {/* Step 1 */}
+            <div className="group relative">
+              {/* Background Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-white rounded-3xl transform group-hover:scale-105 transition-all duration-500"></div>
+
+              <div className="relative bg-white rounded-2xl border border-yellow-200 p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:border-yellow-200">
+                {/* Step Number */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-white font-bold text-sm sm:text-lg shadow-lg">
+                      1
+                    </div>
+                    <div className="ml-4">
+                      <span className="text-xs font-semibold text-black uppercase tracking-wider">
+                        Step One
+                      </span>
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                        Claim Your Domain
+                      </h3>
+                    </div>
                   </div>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Decorative Element */}
-          <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
-          </div>
-        </div>
-      </div>
-
-      {/* Step 2 */}
-      <div className="group relative">
-        {/* Background Effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-white rounded-3xl transform group-hover:scale-105 transition-all duration-500"></div>
-        
-        <div className="relative bg-white rounded-2xl border border-yellow-200 p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:border-yellow-200">
-          {/* Step Number */}
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                2
-              </div>
-              <div className="ml-4">
-                <span className="text-xs font-semibold text-black uppercase tracking-wider">Step Two</span>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900">Customize & Build</h3>
-              </div>
-            </div>
-            <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <svg className="w-5 h-5 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-              </svg>
-            </div>
-          </div>
-
-          {/* Image */}
-          <div className="mb-6 rounded-xl overflow-hidden transform group-hover:scale-105 transition-transform duration-500">
-            <Image
-              src={S2}
-              alt="Customize and build step"
-              className="w-full h-48 object-cover"
-            />
-          </div>
-
-          {/* Content */}
-          <div className="space-y-4">
-            <p className="text-gray-600 leading-relaxed text-sm sm:text-[16px]">
-              Choose from beautiful templates and customize your portfolio with our drag-and-drop builder. 
-              Add your projects, skills, and achievements.
-            </p>
-            <ul className="space-y-2 text-sm sm:text-xl">
-              {[
-                "Select from 50+ templates",
-                "Drag-and-drop customization",
-                "Add projects & case studies"
-              ].map((item, index) => (
-                <li key={index} className="flex items-center text-sm text-gray-600">
-                  <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center mr-3">
-                    <Check className="w-3 h-3 text-yellow-300" />
+                  <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg
+                      className="w-5 h-5 text-yellow-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
+                    </svg>
                   </div>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+                </div>
 
-          {/* Progress Indicator */}
-          <div className="mt-6">
-            <div className="flex items-center justify-between text-xs sm:text-sm text-gray-500 mb-2">
-              <span>Setup Progress</span>
-              <span>50%</span>
-            </div>
-            <div className="w-full bg-gray-200 rounded-full h-2">
-              <div className="bg-black h-2 rounded-full w-1/2 transition-all duration-500 group-hover:w-2/3"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+                {/* Image */}
+                <div className="mb-6 rounded-xl overflow-hidden transform group-hover:scale-105 transition-transform duration-500">
+                  <Image
+                    src={S1}
+                    alt="Claim your domain step"
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
 
-      {/* Step 3 */}
-      <div className="group relative">
-        {/* Background Effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-white rounded-3xl transform group-hover:scale-105 transition-all duration-500"></div>
-        
-        <div className="relative bg-white rounded-2xl border border-yellow-200 p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:border-yellow-200">
-          {/* Step Number */}
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                3
+                {/* Content */}
+                <div className="space-y-4">
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-[16px]">
+                    Secure your unique username and get your personalized
+                    portfolio domain instantly. No technical skills required.
+                  </p>
+                  <ul className="space-y-2 text-sm sm:text-xl">
+                    {[
+                      "Choose your perfect username",
+                      "Check instant availability",
+                      "Get your domain in seconds",
+                    ].map((item, index) => (
+                      <li
+                        key={index}
+                        className="flex items-center text-sm text-gray-600"
+                      >
+                        <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center mr-3">
+                          <Check className="w-3 h-3 text-yellow-300" />
+                        </div>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Decorative Element */}
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
+                </div>
               </div>
-              <div className="ml-4">
-                <span className="text-xs font-semibold text-black uppercase tracking-wider">Step Three</span>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900">Go Live & Grow</h3>
-              </div>
             </div>
-            <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <svg className="w-5 h-5 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-              </svg>
-            </div>
-          </div>
 
-          {/* Image */}
-          <div className="mb-6 rounded-xl overflow-hidden transform group-hover:scale-105 transition-transform duration-500">
-            <Image
-              src={S3}
-              alt="Go live and grow step"
-              className="w-full h-48 object-cover"
-            />
-          </div>
+            {/* Step 2 */}
+            <div className="group relative">
+              {/* Background Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-white rounded-3xl transform group-hover:scale-105 transition-all duration-500"></div>
 
-          {/* Content */}
-          <div className="space-y-4">
-            <p className="text-gray-600 leading-relaxed text-sm sm:text-[16px]">
-              Publish your portfolio instantly and start sharing it with the world. 
-              Track your visitors and get discovered by opportunities.
-            </p>
-            <ul className="space-y-2 text-sm sm:text-xl">
-              {[
-                "One-click publishing",
-                "Share on social media",
-                "Track visitor analytics"
-              ].map((item, index) => (
-                <li key={index} className="flex items-center text-sm text-gray-600">
-                  <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center mr-3">
-                    <Check className="w-3 h-3 text-yellow-300" />
+              <div className="relative bg-white rounded-2xl border border-yellow-200 p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:border-yellow-200">
+                {/* Step Number */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                      2
+                    </div>
+                    <div className="ml-4">
+                      <span className="text-xs font-semibold text-black uppercase tracking-wider">
+                        Step Two
+                      </span>
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                        Customize & Build
+                      </h3>
+                    </div>
                   </div>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+                  <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg
+                      className="w-5 h-5 text-yellow-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                      />
+                    </svg>
+                  </div>
+                </div>
 
-          {/* Success Badge */}
-          {/* <div className="mt-6 inline-flex items-center bg-green-50 border border-green-200 rounded-full px-4 py-2">
+                {/* Image */}
+                <div className="mb-6 rounded-xl overflow-hidden transform group-hover:scale-105 transition-transform duration-500">
+                  <Image
+                    src={S2}
+                    alt="Customize and build step"
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="space-y-4">
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-[16px]">
+                    Choose from beautiful templates and customize your portfolio
+                    with our drag-and-drop builder. Add your projects, skills,
+                    and achievements.
+                  </p>
+                  <ul className="space-y-2 text-sm sm:text-xl">
+                    {[
+                      "Select from 50+ templates",
+                      "Drag-and-drop customization",
+                      "Add projects & case studies",
+                    ].map((item, index) => (
+                      <li
+                        key={index}
+                        className="flex items-center text-sm text-gray-600"
+                      >
+                        <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center mr-3">
+                          <Check className="w-3 h-3 text-yellow-300" />
+                        </div>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Progress Indicator */}
+                <div className="mt-6">
+                  <div className="flex items-center justify-between text-xs sm:text-sm text-gray-500 mb-2">
+                    <span>Setup Progress</span>
+                    <span>50%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-black h-2 rounded-full w-1/2 transition-all duration-500 group-hover:w-2/3"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="group relative">
+              {/* Background Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-white rounded-3xl transform group-hover:scale-105 transition-all duration-500"></div>
+
+              <div className="relative bg-white rounded-2xl border border-yellow-200 p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:border-yellow-200">
+                {/* Step Number */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                      3
+                    </div>
+                    <div className="ml-4">
+                      <span className="text-xs font-semibold text-black uppercase tracking-wider">
+                        Step Three
+                      </span>
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                        Go Live & Grow
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg
+                      className="w-5 h-5 text-yellow-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Image */}
+                <div className="mb-6 rounded-xl overflow-hidden transform group-hover:scale-105 transition-transform duration-500">
+                  <Image
+                    src={S3}
+                    alt="Go live and grow step"
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="space-y-4">
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-[16px]">
+                    Publish your portfolio instantly and start sharing it with
+                    the world. Track your visitors and get discovered by
+                    opportunities.
+                  </p>
+                  <ul className="space-y-2 text-sm sm:text-xl">
+                    {[
+                      "One-click publishing",
+                      "Share on social media",
+                      "Track visitor analytics",
+                    ].map((item, index) => (
+                      <li
+                        key={index}
+                        className="flex items-center text-sm text-gray-600"
+                      >
+                        <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center mr-3">
+                          <Check className="w-3 h-3 text-yellow-300" />
+                        </div>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Success Badge */}
+                {/* <div className="mt-6 inline-flex items-center bg-green-50 border border-green-200 rounded-full px-4 py-2">
             <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
             <span className="text-sm font-medium text-green-700">Ready to Launch! 🚀</span>
           </div> */}
-        </div>
-      </div>
-    </div>
+              </div>
+            </div>
+          </div>
 
-    {/* CTA Section */}
-    {/* <div className="text-center mt-16">
+          {/* CTA Section */}
+          {/* <div className="text-center mt-16">
       <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-8 sm:p-12 text-white">
         <h3 className="text-2xl sm:text-3xl font-bold mb-4">
           Ready to Start Your Journey?
@@ -656,11 +718,14 @@ export default function Home() {
         </p>
       </div>
     </div> */}
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* Features Section */}
-      <section id="features" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section
+        id="features"
+        className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white"
+      >
         <div className="max-w-7xl mx-auto text-center">
           {/* Header */}
           <div className="mb-12 sm:mb-16">
@@ -686,8 +751,10 @@ export default function Home() {
                 Portfolio Templates
               </h3>
               <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base font-normal">
-                Track and showcase all your experiences and achievements in one
-                clean, centralized dashboard.
+                Choose from beautifully designed templates crafted for
+                developers. Customize your portfolio with ease and let your
+                skills, projects, and achievements shine in your own unique
+                style.
               </p>
 
               <div className="flex flex-wrap gap-2 justify-center">
@@ -759,11 +826,13 @@ export default function Home() {
             {/* Micro Learning */}
             <div className="bg-gradient-to-b from-yellow-50 to-white border border-yellow-100 rounded-xl p-6 sm:p-8 w-full lg:w-2/5 mx-auto">
               <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 sm:mb-4">
-  Micro Learning
-</h3>
-<p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base font-normal">
-  Learn in small, focused bursts—one concept, one skill at a time. Stay consistent, build momentum, and grow effortlessly with bite-sized lessons designed for busy minds.
-</p>
+                Micro Learning
+              </h3>
+              <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base font-normal">
+                Learn in small, focused bursts one concept, one skill at a time.
+                Stay consistent, build momentum, and grow effortlessly with
+                bite-sized lessons designed for busy minds.
+              </p>
 
               <div className="relative h-40 sm:h-48 rounded-lg overflow-hidden">
                 <Image
@@ -985,7 +1054,10 @@ export default function Home() {
       </section>
 
       {/* Why Us Section */}
-      <section id="whyus" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section
+        id="whyus"
+        className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <div className="inline-block bg-white border border-gray-300 rounded-full px-3 py-1 sm:px-4 sm:py-2 mb-3 sm:mb-4">
@@ -1103,21 +1175,23 @@ export default function Home() {
                   alt="Expertisor Logo"
                   className="h-8 w-auto mr-2 sm:h-10 sm:mr-3"
                 />
-                <span className="font-bold text-lg text-black sm:text-xl">EXPERTISOR</span>
+                <span className="font-bold text-lg text-black sm:text-xl">
+                  EXPERTISOR
+                </span>
               </div>
               <div className="flex space-x-3 sm:space-x-4 mb-3 sm:mb-4">
-  {["LinkedIn"].map((social, index) => (
-    <a
-      key={index}
-      href="https://www.linkedin.com/company/expertisor/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="w-6 h-6 sm:w-8 sm:h-8 border border-gray-300 rounded-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
-    >
-      <LinkedinIcon className="w-4 h-4 sm:w-4 sm:h-5 text-gray-600" />
-    </a>
-  ))}
-</div>
+                {["LinkedIn"].map((social, index) => (
+                  <a
+                    key={index}
+                    href="https://www.linkedin.com/company/expertisor/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-6 h-6 sm:w-8 sm:h-8 border border-gray-300 rounded-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
+                  >
+                    <LinkedinIcon className="w-4 h-4 sm:w-4 sm:h-5 text-gray-600" />
+                  </a>
+                ))}
+              </div>
 
               <p className="text-gray-600 text-xs sm:text-sm font-medium">
                 © 2025 Expertisor. All Rights Reserved
