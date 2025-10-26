@@ -46,6 +46,7 @@ import { Montserrat } from "next/font/google";
 // import axios from "axios";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import Link from "next/link";
 
 // Configure Montserrat font
 const montserrat = Montserrat({
@@ -239,14 +240,20 @@ export default function Home() {
             </div>
 
             {/* Desktop Buttons */}
-            <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
-              <button className="px-3 py-2 text-sm lg:px-4 lg:py-2 lg:text-base border text-black border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium">
-                Log in
-              </button>
-              <button className="px-3 py-2 text-sm lg:px-4 lg:py-2 lg:text-base bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-medium">
-                Register
-              </button>
-            </div>
+              <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
+      <Link
+        href="/login"
+        className="px-3 py-2 text-sm lg:px-4 lg:py-2 lg:text-base border text-black border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+      >
+        Log in
+      </Link>
+      <Link
+        href="/register"
+        className="px-3 py-2 text-sm lg:px-4 lg:py-2 lg:text-base bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
+      >
+        Register
+      </Link>
+    </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -266,30 +273,35 @@ export default function Home() {
             <div className="md:hidden py-4 border-t border-gray-200">
               <div className="flex flex-col space-y-4">
                 {[
-                  "Home",
-                  "Features",
-                  "Why us?",
-                  "Testimonials",
-                  "Contact us",
-                  "FAQ",
+                  { name: "Home", href: "#" },
+                { name: "Features", href: "#features" },
+                { name: "Why us?", href: "#whyus" },
+                // { name: "Testimonials", href: "#testimonials" },
+                { name: "FAQ", href: "#faq" },
                 ].map((item) => (
                   <a
-                    key={item}
-                    href="#"
+                    key={item.name}
+                  href={item.href}
                     className="text-gray-700 hover:text-black font-medium py-2"
                     onClick={() => setMenuOpen(false)}
                   >
-                    {item}
+                    {item.name}
                   </a>
                 ))}
                 <div className="flex space-x-3 pt-4">
-                  <button className="flex-1 px-4 py-2 border text-black border-gray-300 rounded-lg hover:bg-gray-50 text-sm font-medium">
-                    Log in
-                  </button>
-                  <button className="flex-1 px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 text-sm font-medium">
-                    Register
-                  </button>
-                </div>
+      <Link
+        href="/login"
+        className="flex-1 px-4 py-2 border text-black border-gray-300 rounded-lg hover:bg-gray-50 text-sm font-medium text-center transition-colors"
+      >
+        Log in
+      </Link>
+      <Link
+        href="/register"
+        className="flex-1 px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 text-sm font-medium text-center transition-colors"
+      >
+        Register
+      </Link>
+    </div>
               </div>
             </div>
           )}
@@ -419,7 +431,7 @@ export default function Home() {
             
       </div>
       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-        Build Your Portfolio in 3 Easy Steps
+        BUILD YOUR PORTFOLIO IN 3 EASY STEPS
       </h2>
       <p className="text-sm sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
         From claiming your domain to showcasing your work, we've made the process incredibly simple and fast.
@@ -463,7 +475,7 @@ export default function Home() {
 
           {/* Content */}
           <div className="space-y-4">
-            <p className="text-gray-600 leading-relaxed text-sm sm:text-xl">
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-[16px]">
               Secure your unique username and get your personalized portfolio domain instantly. 
               No technical skills required.
             </p>
@@ -525,7 +537,7 @@ export default function Home() {
 
           {/* Content */}
           <div className="space-y-4">
-            <p className="text-gray-600 leading-relaxed text-sm sm:text-xl">
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-[16px]">
               Choose from beautiful templates and customize your portfolio with our drag-and-drop builder. 
               Add your projects, skills, and achievements.
             </p>
@@ -593,7 +605,7 @@ export default function Home() {
 
           {/* Content */}
           <div className="space-y-4">
-            <p className="text-gray-600 leading-relaxed text-sm sm:text-xl">
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-[16px]">
               Publish your portfolio instantly and start sharing it with the world. 
               Track your visitors and get discovered by opportunities.
             </p>
@@ -623,7 +635,7 @@ export default function Home() {
     </div>
 
     {/* CTA Section */}
-    <div className="text-center mt-16">
+    {/* <div className="text-center mt-16">
       <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-8 sm:p-12 text-white">
         <h3 className="text-2xl sm:text-3xl font-bold mb-4">
           Ready to Start Your Journey?
@@ -643,7 +655,7 @@ export default function Home() {
           No credit card required • Setup in under 5 minutes
         </p>
       </div>
-    </div>
+    </div> */}
   </div>
 </section>
 
@@ -747,12 +759,12 @@ export default function Home() {
             {/* Micro Learning */}
             <div className="bg-gradient-to-b from-yellow-50 to-white border border-yellow-100 rounded-xl p-6 sm:p-8 w-full lg:w-2/5 mx-auto">
               <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 sm:mb-4">
-                Micro Learning
-              </h3>
-              <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base font-normal">
-                Track and showcase all your experiences and achievements in one
-                clean, centralized dashboard.
-              </p>
+  Micro Learning
+</h3>
+<p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base font-normal">
+  Learn in small, focused bursts—one concept, one skill at a time. Stay consistent, build momentum, and grow effortlessly with bite-sized lessons designed for busy minds.
+</p>
+
               <div className="relative h-40 sm:h-48 rounded-lg overflow-hidden">
                 <Image
                   src={frame3}
