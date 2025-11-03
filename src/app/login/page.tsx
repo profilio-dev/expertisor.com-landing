@@ -3,6 +3,7 @@
 import React from "react";
 import { Rocket, Mail } from "lucide-react";
 import { Montserrat } from "next/font/google";
+import CareerTimeline from "@/components/ui/landing_page/CareerTimeline";
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -15,6 +16,8 @@ export default function LaunchingSoon() {
 
   return (
     <div className={`min-h-screen bg-black flex items-center justify-center p-6 ${montserrat.className}`}>
+
+
       <div className="text-center max-w-md">
         {/* Logo/Brand */}
         <div className="mb-8">

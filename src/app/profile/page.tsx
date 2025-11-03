@@ -7,13 +7,21 @@ import {
   Settings, CheckCircle, Globe, Plus, TrendingUp,
   Dribbble, Youtube, Github, Twitter, Linkedin
 } from "lucide-react";
+import CareerTimeline from "@/components/ui/landing_page/CareerTimeline";
+import { Montserrat } from "next/font/google";
+  const montserrat = Montserrat({
+    subsets: ["latin"],
+    weight: ["300", "400", "500", "600", "700", "800"],
+    display: "swap",
+  });
 
 export default function PeerlistUI() {
   const [activeTab, setActiveTab] = useState("work");
   const [activeNav, setActiveNav] = useState("search");
 
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className={`min-h-screen bg-white ${montserrat.className}`}  >
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-50">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -205,6 +213,7 @@ export default function PeerlistUI() {
               </div>
             </div>
           </div>
+                   <CareerTimeline />
 
           {/* Tabbed Navigation */}
           <div className="border-b border-gray-200 mb-8">
